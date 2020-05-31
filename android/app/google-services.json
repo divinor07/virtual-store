@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "774068706930",
+    "firebase_url": "https://virtualstore-eeecc.firebaseio.com",
+    "project_id": "virtualstore-eeecc",
+    "storage_bucket": "virtualstore-eeecc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774068706930:android:1325361020abce2ee7eceb",
+        "android_client_info": {
+          "package_name": "br.com.rodrigues.virtualstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774068706930-fm1a95e6g1o863r80jgon0rcl7ruapfk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCntdDtNXmU1vu9VxtM67u0fRXZh4hq2Lc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774068706930-fm1a95e6g1o863r80jgon0rcl7ruapfk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
