@@ -24,14 +24,14 @@ class HomeTab extends StatelessWidget {
               backgroundColor: Colors.transparent,
               elevation: 0.0,
               flexibleSpace: FlexibleSpaceBar(
-                title: const Text("Novidades"),
+                title: const Text('Novidades'),
                 centerTitle: true,
               ),
             ),
             FutureBuilder<QuerySnapshot>(
               future: Firestore.instance
-                  .collection("home")
-                  .orderBy("pos")
+                  .collection('home')
+                  .orderBy('pos')
                   .getDocuments(),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
@@ -55,9 +55,9 @@ class HomeTab extends StatelessWidget {
                   );
                 }
               },
-            )
+            ),
           ],
-        )
+        ),
       ],
     );
   }
