@@ -84,6 +84,16 @@ class CartScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             );
+          } else {
+            return ListView(
+              children: <Widget>[
+                Column(
+                  children: model.products.map((product){
+                    
+                  }).toList(),
+                )
+              ],
+            );
           }
         },
       ),
