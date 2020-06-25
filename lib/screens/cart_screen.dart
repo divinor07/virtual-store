@@ -4,7 +4,9 @@ import 'package:virtualstore/models/cart_model.dart';
 import 'package:virtualstore/models/user_model.dart';
 import 'package:virtualstore/screens/login_screen.dart';
 import 'package:virtualstore/tiles/cart_tile.dart';
+import 'package:virtualstore/widgets/cart_price.dart';
 import 'package:virtualstore/widgets/discount_card.dart';
+import 'package:virtualstore/widgets/ship_card.dart';
 
 class CartScreen extends StatelessWidget {
   @override
@@ -95,6 +97,8 @@ class CartScreen extends StatelessWidget {
                   }).toList(),
                 ),
                 DiscountCard(),
+                ShipCard(),
+                CartPrice(() {}),
               ],
             );
           }
