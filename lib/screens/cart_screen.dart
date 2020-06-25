@@ -3,6 +3,7 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:virtualstore/models/cart_model.dart';
 import 'package:virtualstore/models/user_model.dart';
 import 'package:virtualstore/screens/login_screen.dart';
+import 'package:virtualstore/screens/order_screen.dart';
 import 'package:virtualstore/tiles/cart_tile.dart';
 import 'package:virtualstore/widgets/cart_price.dart';
 import 'package:virtualstore/widgets/discount_card.dart';
@@ -100,7 +101,13 @@ class CartScreen extends StatelessWidget {
                 ShipCard(),
                 CartPrice(() async {
                   String orderId = await model.finishOrder();
-                  if (orderId != null) print(orderId);
+                  if (orderId != null) {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => OrderScreen(orderId),
+                      ),
+                    );
+                  }
                 }),
               ],
             );
