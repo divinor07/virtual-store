@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:virtualstore/datas/cart_product.dart';
 import 'package:virtualstore/datas/product_data.dart';
@@ -13,6 +12,8 @@ class CartTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget _buildContent() {
+      CartModel.of(context).updatePrices();
+
       return Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -57,9 +58,11 @@ class CartTile extends StatelessWidget {
                       IconButton(
                         icon: Icon(Icons.remove),
                         color: Theme.of(context).primaryColor,
-                        onPressed: cartProduct.quantity > 1 ? () {
-                          CartModel.of(context).decProduct(cartProduct);
-                        } : null,
+                        onPressed: cartProduct.quantity > 1
+                            ? () {
+                                CartModel.of(context).decProduct(cartProduct);
+                              }
+                            : null,
                       ),
                       Text(cartProduct.quantity.toString()),
                       IconButton(
