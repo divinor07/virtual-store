@@ -3,6 +3,8 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:virtualstore/models/cart_model.dart';
 import 'package:virtualstore/models/user_model.dart';
 import 'package:virtualstore/screens/login_screen.dart';
+import 'package:virtualstore/tiles/cart_tile.dart';
+import 'package:virtualstore/widgets/discount_card.dart';
 
 class CartScreen extends StatelessWidget {
   @override
@@ -88,10 +90,11 @@ class CartScreen extends StatelessWidget {
             return ListView(
               children: <Widget>[
                 Column(
-                  children: model.products.map((product){
-                    
+                  children: model.products.map((product) {
+                    return CartTile(product);
                   }).toList(),
-                )
+                ),
+                DiscountCard(),
               ],
             );
           }
