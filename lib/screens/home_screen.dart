@@ -6,6 +6,7 @@ import 'package:virtualstore/widgets/cart_button.dart';
 import 'package:virtualstore/widgets/custom_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
+
   final _pageController = PageController();
 
   @override
@@ -21,17 +22,24 @@ class HomeScreen extends StatelessWidget {
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text('Produtos'),
+            title: Text("Produtos"),
             centerTitle: true,
           ),
           drawer: CustomDrawer(_pageController),
           body: ProductsTab(),
           floatingActionButton: CartButton(),
         ),
-        Container(color: Colors.yellow,),
         Scaffold(
           appBar: AppBar(
-            title: Text('Meus Pedidos'),
+            title: Text("Lojas"),
+            centerTitle: true,
+          ),
+          body: PlacesTab(),
+          drawer: CustomDrawer(_pageController),
+        ),
+        Scaffold(
+          appBar: AppBar(
+            title: Text("Meus Pedidos"),
             centerTitle: true,
           ),
           body: OrdersTab(),
