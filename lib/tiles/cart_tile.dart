@@ -34,23 +34,19 @@ class CartTile extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     cartProduct.productData.title,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 17.0,
-                    ),
+                    style:
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 17.0),
                   ),
                   Text(
-                    'Tamanho: ${cartProduct.size}',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                    ),
+                    "Tamanho: ${cartProduct.size}",
+                    style: TextStyle(fontWeight: FontWeight.w300),
                   ),
                   Text(
-                    'R\$ ${cartProduct.productData.price.toStringAsFixed(2)}',
+                    "R\$ ${cartProduct.productData.price.toStringAsFixed(2)}",
                     style: TextStyle(
                         color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 16.0),
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -73,18 +69,18 @@ class CartTile extends StatelessWidget {
                         },
                       ),
                       FlatButton(
-                        child: Text('Remover'),
+                        child: Text("Remover"),
                         textColor: Colors.grey[500],
                         onPressed: () {
                           CartModel.of(context).removeCartItem(cartProduct);
                         },
-                      ),
+                      )
                     ],
                   )
                 ],
               ),
             ),
-          ),
+          )
         ],
       );
     }
@@ -94,9 +90,9 @@ class CartTile extends StatelessWidget {
       child: cartProduct.productData == null
           ? FutureBuilder<DocumentSnapshot>(
               future: Firestore.instance
-                  .collection('products')
+                  .collection("products")
                   .document(cartProduct.category)
-                  .collection('items')
+                  .collection("items")
                   .document(cartProduct.pid)
                   .get(),
               builder: (context, snapshot) {
